@@ -6,4 +6,4 @@ export let greetUser = function () {
 
 export let name = 'Tom Dizzlicious';
 
-export default 'Default Val';
+export default 'Default val';
