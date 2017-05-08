@@ -1,6 +1,12 @@
-//import './../imports/utils';
-import {greetUser} from './../imports/utils';
-import death from './../imports/math';
+import {Meteor} from 'meteor/meteor';
+import {Players} from './../imports/api/players';
 
-console.log('Log from /server/main.js');
-console.log(death(10,5));
+Meteor.startup(function () {
+/*  Players.insert({
+    name: 'Jeeves',
+    score: 80
+  });
+
+  */
+  console.log(Players.find().fetch());
+});
