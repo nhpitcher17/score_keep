@@ -6,9 +6,16 @@ import {Tracker} from 'meteor/tracker';
 import {Players} from './../imports/api/players';
 
 const renderPlayers = (playersList) => {
-  return playersList.map( (player) =>
-    <p key={player._id}>{player.name} has {player.score} points!</p>
-  );
+  return playersList.map( (player) => {
+    return (
+      <p key={player._id}>
+        {player.name} has {player.score} points!
+        <button onClick={() => {
+          Players.remove(player._id);
+        }}>X</button>
+      </p>
+    );
+  });
 };
 
 const handleSubmit = (e) => {
